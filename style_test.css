@@ -1,0 +1,277 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* overflow: hidden; */
+    scroll-behavior: smooth;
+}
+
+
+
+
+/* 侧边栏 */
+div.sideView {
+    position: fixed;
+    top: 50%;
+    transform:translateY(-50%);
+    left: 5px;
+    width: 60px;
+    background-color: rgba(158, 228, 253,0.5);
+    border-radius: 30px;
+    transition: width 0.5s;
+    z-index: 10;
+    box-shadow: 5px 0 10px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    opacity: 0.9;
+    box-sizing: border-box; /* 确保内部边距不会扩展宽度 */
+    transition: width 0.5s, height 0.5s, border-radius 0.5s;
+}
+
+/* 整体布局 */
+div.side {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+/* 头像模块 */
+div.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(28, 27, 27); /* 圆形背景 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s, margin-bottom 0.5s;
+}
+
+div.avatar img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* 音乐播放按钮容器 */
+.music-control {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(252, 247, 247, 0.8); /* 圆形背景 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s, margin-bottom 0.5s;
+    cursor: pointer; /* 鼠标悬停时显示手形 */
+}
+
+/* 鼠标悬停动画 */
+.music-control:hover {
+    transform: scale(1.1); /* 放大效果 */
+    background-color: #6f6f6f; /* 背景色变化 */
+}
+
+#music-button.rotating {
+    animation: music-rotate 2s linear infinite; /* 无限旋转动画 */
+}
+/* 定义旋转动画 */
+@keyframes music-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 音乐播放按钮图片 */
+.music-control img {
+    width: 60%; /* 图标大小 */
+    height: 60%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* 平滑动画 */
+}
+
+/* 菜单 */
+ul.Menu {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+/* 菜单项 */
+ul.Menu li {
+    width: calc(100% - 2px);
+    height: 45px;
+    margin: 1px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative; /* 使图标和文字重叠 */
+    overflow: hidden; 
+    transition: margin-bottom 0.5s, height 0.5s ease, border-radius 0.5s ease, width 0.5s ease;
+}
+/* 使用伪元素实现边框 */
+.Menu .li-after {
+    width: 30px;
+    height: 1px; /* 边框高度 */
+    background-color: rgba(255, 255, 255, 0.2); /* 边框颜色 */
+    transition: all 0.3s ease; /* 平滑过渡 */
+}
+
+ul.Menu li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* 图标和文字容器 */
+ul.Menu li .icon {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.icon-svg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 100%;
+    color: #ffffff; /* 改变图标颜色 */
+    fill: currentColor;
+    transition: all 0.5s ease, color 0s;
+}
+
+.Menu li.active .icon-svg{
+    color: aqua;
+    fill: currentColor;
+}
+
+div.sideView:hover ul.Menu li .icon-svg {
+    width: 25%;
+    transform: translateX(-40px);
+}
+
+/* 文本样式 */
+ul.Menu li .content {
+    font-size: 12px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute; /* 文字与图标重叠 */
+    left: 50%; /* 初始与图标重叠 */
+    opacity: 0; /* 默认隐藏 */
+    white-space: nowrap;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* 鼠标悬停时展开效果 */
+div.sideView:hover {
+    border-radius: 40px;
+    width: 120px;
+}
+
+div.sideView:hover div.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 35px; /* 圆角矩形 */
+    margin-bottom: 30px;
+}
+
+
+div.sideView:hover ul.Menu li {
+    height: 70px;
+    border-radius: 10px;
+    width: calc(100% - 20px);
+}
+
+div.sideView:hover ul.Menu li .content {
+    transform: translateX(-10px);
+    opacity: 1; /* 文字渐显 */
+}
+
+/* 鼠标悬停时展开效果 */
+div.sideView:hover .li-after{
+    width: 70px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+}
+
+div.sideView:hover .Menu li.active{
+    width: calc(100% - 10px);
+}
+
+/* 悬停高光效果 */
+.Menu li:hover {
+    background-color: rgba(130, 155, 192, 0.5); /* 鼠标悬停高亮 */
+}
+.Menu li:hover a{
+    color: rgb(63, 141, 249); /* 鼠标悬停高亮 */
+}
+.Menu li:hover .icon-svg{
+    color: rgb(63, 141, 249); /* 鼠标悬停高亮 */
+}
+
+/* 当前选项高亮 */
+.Menu li.active {
+    background-color: rgba(132, 163, 211,0.5); /* 当前选项高亮 */
+}
+
+.Menu li.active a{
+    color: aqua;
+}
+.Menu li.active:hover .icon-svg{
+    color: aqua;
+}
+
+
+
+
+
+
+/*滚动条设置*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    width: 6px;
+    background: rgba(#101F1C, 0.1);
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(144,147,153,.5);
+    background-clip: padding-box;
+    min-height: 28px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    transition: background-color .3s;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(144,147,153,.3);
+  }

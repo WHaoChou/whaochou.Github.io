@@ -1,0 +1,633 @@
+.Next{
+    position: absolute;
+    bottom: 20px;
+    margin-top: auto;
+    width: 100%;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0);
+}
+#home .Next{
+    position: absolute;
+    bottom: 20px;
+}
+#home .xiayiye{
+    width: 40px;
+    mix-blend-mode: lighten;
+    opacity: 0.7;
+}
+
+.xiayiye{
+    width: 40px;
+    mix-blend-mode: lighten;
+    opacity: 0.6;
+    background-color: rgba(255, 255, 255, 0);
+    animation: moveDown 1.5s infinite; /* 应用动画 */
+}
+
+/* 定义动画规则 */
+@keyframes moveDown {
+    0%, 100% {
+        transform: translateY(0); /* 初始和结束位置 */
+    }
+    50% {
+        transform: translateY(12px); /* 向下移动 5px */
+    }
+}
+
+/*page部分*/
+
+/* 页面大小等于窗口大小 */
+.page {
+    height: 100vh;
+    width: calc(100vw - 10px);
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+    box-sizing: border-box; /* 确保 padding 不影响宽度 */
+    transition: background-color 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255,0);
+    position: relative;
+}
+
+.page-wrapper {
+    width: 100vw - 10px;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover; /* 图片覆盖整个页面 */
+    background-position: center; /* 居中显示 */
+    background-repeat: no-repeat; /* 不重复 */
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
+
+
+/*home部分*/
+#home-wrapper{
+    background-image: url(./images2/海面.jpeg);
+}
+#home{
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* 子元素垂直排列（上下分布） */
+    text-align: center;
+    align-items:center;
+    overflow: hidden;
+    padding: 30px;
+}
+.home-content {
+   top: 20%;
+}
+
+.ava-name {
+    padding: 20px 20px;
+    display: flex; /* 激活 Flexbox 布局 */
+    flex-direction: column; /* 子元素垂直排列（上下分布） */
+    justify-content: center; /* 垂直方向居中 */
+    align-items: center; /* 水平方向居中 */
+    text-align: center; /* 确保文字居中对齐 */
+    margin-bottom: 20px; /* 可选：设置与其他内容的间距 */
+
+    position: relative; /* 让内容与背景独立定位 */
+    margin: 0 auto; /* 居中对齐 */
+    border-radius: 20%; /* 设置圆形 */
+    background: linear-gradient(to bottom, rgba(86, 84, 84, 0) 0%, rgba(86, 84, 84, 0.05) 40%, rgba(86, 84, 84, 0.8) 80%, rgba(86, 84, 84, 0.4) 100%);
+    overflow: hidden; /* 确保子元素不超出背景范围 */
+}
+.ava-name h2{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(92, 208, 246);
+}
+.ava-name h3{
+    margin-top: 5px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(150, 229, 255);
+
+}
+
+.total-avatar {
+    position: relative; /* 定位子元素 */
+    width: 220px; /* 宽度 */
+    height: 300px; /* 高度，外层框较高 */
+    border-radius: 100px; /* 圆角矩形 */
+    display: flex;
+    overflow: hidden;
+    justify-content: center; /* 水平居中 */
+    align-items: flex-end; /* 垂直对齐到底部 */
+    margin: 0 auto; /* 居中布局 */
+}
+
+/* 外层头像框 */
+.outer-avatar {
+    position: absolute; /* 定位子元素 */
+    bottom: 4px;
+    width: 200px; /* 宽度 */
+    height: 300px; /* 高度，外层框较高 */
+    border-radius: 100px; /* 圆角矩形 */
+    background-color: #f0f0f000; /* 外层背景色 */
+    display: flex;
+    overflow: hidden;
+    justify-content: center; /* 水平居中 */
+    align-items: flex-end; /* 垂直对齐到底部 */
+    margin: 0 auto; /* 居中布局 */
+}
+
+/* 内层头像框 */
+.inner-avatar {
+    position: absolute;
+    bottom: 0; /* 底部重合 */
+    width: 210px; /* 圆形框宽度 */
+    height: 210px; /* 圆形框高度 */
+    border-radius: 50%; /* 圆形 */
+    background-color: #ffffff8f; /* 内层背景色 */
+    border: 4px solid rgba(92, 208, 246, 0.541); /* 白色边框 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    z-index: 2; /* 显示在外层框上方 */
+}
+
+/* 头像图片 */
+.outer-avatar img {
+    position: absolute;
+    bottom: -80%; /* 上方超出内层框 */
+    left: 50%;
+    transform: translateX(-50%); /* 修正水平居中 */
+    width: 500px; /* 头像填充宽度 */
+    height: auto; /* 保持比例 */
+    object-fit: cover; /* 确保头像比例正常 */
+    z-index: 3; /* 确保图片显示在边框上方 */
+}
+
+.eye {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.eye.left {
+    top: 125px;
+    left: 75px;
+}
+.eye.right {
+    top: 124px;
+    right: 60px;
+}
+.pupil {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(61, 56, 56);
+    border-radius: 50%;
+    transition: transform 0.05s;
+}
+
+#home p{
+    flex-basis: 100%;
+    margin: 5px;
+    color:white;
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#home strong{
+    color:white;
+    flex-basis: 100%;
+    font-size: 25px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+
+
+
+/* profile部分 */
+#profile-wrapper{
+    background-image: url(./images2/背景2.png);
+}
+#profile{
+    background-color: rgb(255, 255, 255,0);
+    min-height: 400px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column; /* 子元素垂直排列（上下分布） */
+    text-align: center;
+    align-items:center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+#profile .bofore-introduction{
+    height: 10vh;
+}
+#profile span.biaoqian{
+    display: inline-block;
+    width:45px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 20px 2px;
+    color: rgb(82, 83, 83);
+}
+#profile span:hover{
+    color: aliceblue;
+}
+#profile p{
+    margin: 7px;
+    font-size: 15px;
+    color: rgb(78, 77, 77);
+    text-align: center;
+}
+/* 圆角矩形容器 */
+.contact-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* 图标之间的间距 */
+    padding: 7px 25px;
+    background-color: #4a6175;
+    border-radius: 100vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: fit-content; /* 根据内容调整宽度 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 图标样式 */
+.contact-icons .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* 圆形图标 */
+    background-color: rgba(0, 0, 0,0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 图标 hover 效果 */
+.contact-icons .icon:hover {
+    transform: scale(1.1); /* 放大 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 图标内的图片 */
+.contact-icons .icon img {
+    width: 70%; /* 图标内图片宽度 */
+    height: 70%; /* 图标内图片高度 */
+    object-fit: contain;
+}
+
+
+
+
+
+/* overview部分 */
+#overview-wrapper{
+    background-image: url(./images2/背景2.1.png);
+}
+/* 页面内容布局 */
+.page#overview {
+    background-color: rgba(255, 255, 255,0);
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center; /* 子元素水平居中 */
+    padding: 20px;
+    gap: 20px; /* h2 与项目展示容器之间的间距 */
+    height: 100vh; /* 确保页面高度与窗口高度一致 */
+    box-sizing: border-box; /* 包括内边距 */
+}
+
+/* gallery上方容器 */
+.page#overview .before-gallery {
+    height: 5vh;
+}
+
+/* 项目展示容器 */
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 从顶部开始排列 */
+    align-items: center;
+
+    background: none; /* 未激活时无背景 */
+
+    height: 80vh;
+    width: calc(100vw - 160px); /* 容器宽度撑满父元素 */
+    overflow-y: scroll;
+    scrollbar-width: 0px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    box-sizing: border-box; /* 不包括内边距 */
+    transition: border-radius 0.5s ease;
+}
+
+
+
+
+/* 项目组整体布局 */
+.project-group {
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    flex-direction: column; /* 垂直排列标题、链接和内容区域 */
+    align-items: center; /* 水平居中 */
+    padding: 20px;
+    background-color: #fff; /* 背景颜色 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 100px; /* 圆角 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    gap: 10px; /* 子元素之间的间距 */
+    margin: 10px 10px;
+    transition: transform 0.3s ease, height 0.3s ease , width 0.3s ease; /* 平滑过渡动画 */
+    box-sizing: border-box;
+}
+
+/* 默认高度 */
+.project-group {
+    width: 60%;
+    flex-shrink: 0;
+    overflow: hidden;
+    height: calc((100% - 60px) * 0.2); /* 缩小状态 */
+}
+/* 中间选中状态 */
+.project-group.active {
+    width: 80%;
+    flex-shrink: 0;
+    overflow: hidden;
+    height: calc((100% - 60px) * 0.6); /* 展开状态 */
+}
+/* 上下元素 */
+.project-group.nearby {
+    width: 60%;
+    flex-shrink: 0;
+    overflow: hidden;
+    height: calc((100% - 60px) * 0.2);; /* 上下元素高度 */
+}
+/* 非显示区域元素 */
+.project-group.hidden {
+    width: 60%;
+    flex-shrink: 0;
+    overflow: hidden;
+    height: calc((100% -60px) * 0.2);; /* 上下元素高度 */
+    opacity: 0.3;
+}
+
+/* 标题和链接 */
+.project-description {
+    display: flex; /* 水平排列描述和图片展示 */
+    width: 100%;
+    flex-direction: column;
+    height: calc(20%) ;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+.project-description h3 {
+    margin: 0;
+    font-size: 1.7rem; /* 标题字体大小 */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center; /* 水平居中 */
+}
+
+.project-group.hidden .project-description, .project-group.nearby .project-description{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.project-description .topic{
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.project-description a {
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    right: 5%;
+    border-radius: 50%;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+.project-group.active .project-description a{
+    display: block;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.project-description img#goto_link{
+    height: 100%;
+}
+
+
+.before-project-group {
+    width: 20px;
+    min-height: 4px;
+    border-radius: 2px;
+    background-color: #212121;
+    transition: all 1s ease;
+}
+
+.project-group.active .before-project-group{
+    width: 60%;
+    min-height: 2px;
+    margin: 10px;
+}
+
+/* 文字描述和图片展示区域容器 */
+.project-content {
+    display: flex; /* 水平排列描述和图片展示 */
+    justify-content: center; /* 两端对齐 */
+    align-items: center; /* 垂直居中 */
+    width: calc(100%);
+    height: calc(80%) ;
+}
+
+.project-group.hidden .project-content,.project-group.nearby .project-content{
+    opacity: 0;
+}
+.project-group.active .project-content{
+    opacity: 1;
+}
+
+
+/* 图片展示区域 */
+.project-slideshow {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 100%;
+    min-width: 70%;
+}
+
+/* 图片容器 */
+/* 图片展示区域 */
+.slideshow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* 图片样式 */
+.slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%; /* 高度不能超过容器 */
+    max-width: 100%; /* 宽度不能超过容器 */
+    object-fit: contain; /* 保持比例完整显示 */
+    opacity: 0; /* 隐藏图片 */
+    transition: opacity 0.5s ease; /* 平滑切换 */
+}
+
+.slide.active {
+    opacity: 1; /* 仅激活的图片可见 */
+    z-index: 1; /* 确保激活图片在顶部 */
+}
+
+.image-button{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+/* 左右切换按钮 */
+.prev-btn, .next-btn {
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    color: white;
+    border: none;
+    border-radius: 50%; /* 圆形按钮 */
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0.7;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    opacity: 1; /* 鼠标悬停时不透明 */
+}
+
+
+
+
+
+
+
+/* academic部分 */
+#academic-wrapper{
+    background-image: url(./images2/背景2.png);
+}
+.page#academic{
+
+
+}
+
+
+
+
+/* share部分 */
+#share-wrapper{
+    background-image: url(./images2/背景2.1.png);
+}
+.share-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 初始两列均分 */
+    grid-template-rows: 1fr 1fr; /* 初始两行均分 */
+    gap: 10px; /* 网格间距 */
+    height: 90%;
+    aspect-ratio: 1;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
+}
+  
+.share-box {
+    height: 30%;
+    aspect-ratio: 1;
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+#box-1 {
+    justify-self: end; /* 靠右对齐 */
+    align-self: end; /* 靠下对齐 */
+}
+  
+#box-2 {
+    justify-self: start; /* 靠左对齐 */
+    align-self: end; /* 靠下对齐 */
+}
+  
+#box-3 {
+    justify-self: end; /* 靠右对齐 */
+    align-self: start; /* 靠上对齐 */
+}
+  
+#box-4 {
+    justify-self: start; /* 靠左对齐 */
+    align-self: start; /* 靠上对齐 */
+}
+
+
+.share-box.clicked {
+    height: 80%;
+    aspect-ratio: 1;
+    background-color: #e74c3c; /* 改变背景颜色 */
+}
+
+.share-box.shrinking {
+    height: 15%;
+    aspect-ratio: 1;
+    background-color:#212121;
+}
+
+
+

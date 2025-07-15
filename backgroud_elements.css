@@ -1,0 +1,25 @@
+img.bg-element {
+    position: absolute;
+    height: 20vh;
+    width: auto;
+    
+    transform: translate(-50%, -50%);
+    transition: transform 0.01s ease;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.page{
+    z-index: 2;
+}
+
+#share-wrapper #douwang {
+    position: absolute;
+    bottom: -6vh;
+    right: 0vw;
+    height: 38vh;
+    width: 30vw;
+    z-index: 0;
+    pointer-events: none;
+}

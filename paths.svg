@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+    <!-- Page2: 从左侧中间页面外到底部中间页面外 -->
+    <path id="path2" d="M -20 100 C 250 100 550 150 550 420" fill="none" stroke="transparent" />
+
+    <!-- Page3: 从顶部中间页面外到底部中间页面外 -->
+    <path id="path3" d="M550 -20 C 550 250 50 100 50 420 " fill="none" stroke="transparent" />
+
+    <!-- Page4: 从顶部中间页面外到底部中间页面外 -->
+    <path id="path4" d="M 50 -20 L 50 420" fill="none" stroke="transparent" />
+
+    <!-- Page5: 从顶部中间页面外到右侧中间页面内 -->
+    <path id="path5" d="M 50 -20 C 50 250 250 300 500 300 C 500 50 250 0 50 -20 " fill="none" stroke="transparent" />
+</svg>
+

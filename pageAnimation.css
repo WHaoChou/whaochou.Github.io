@@ -1,0 +1,52 @@
+
+/* 激活状态 */
+.project-gallery.active {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 80%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 100px; /* 激活时圆角 */
+    animation: extend-light 0.8s ease-out forwards;
+}
+
+/* 扩展动画 */
+@keyframes extend-light {
+    0% {
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
+    }
+    50% {
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0) 90%);
+    }
+    100% {
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 80%, rgba(255, 255, 255, 0) 100%);
+    }
+}
+
+/* 蒙版效果 */
+.project-group {
+    background-color: rgba(255, 255, 255, 0.555);
+    backdrop-filter: blur(5px) brightness(0.5);
+    transition: all 0.5s ease;
+    cursor: pointer;
+} 
+.slide.active{
+    opacity: 0.5;
+}
+
+/* 鼠标悬浮或选中时的亮度变化 */
+.project-gallery.active .project-group {
+    backdrop-filter: blur(0px) brightness(1); /* 清晰和高亮 */
+}
+.project-gallery.active .slide.active{
+    opacity: 1;
+}
+/* 鼠标悬停时高亮效果 */
+.project-group:hover {
+    transform: translateY(-10px); /* 向上浮动 */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* 更强的阴影效果 */
+    background-color: rgba(255, 255, 255, 0.7); /* 悬停时背景颜色变亮 */
+    border-color: #007bff; /* 高亮边框颜色 */
+    transform: scale(1.02); /* 放大 */
+}
+
+.project-gallery.active .project-group.active,
+.project-gallery.active .project-group.nearby {
+    background-color: rgba(255, 255, 255, 1); /* 悬停时背景颜色变亮 */
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html laug="zh">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="./pictures_test1/logo.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="./pictures_test1/logo.ico"/>
+        <link rel="stylesheet" href="./style_test.css" type="text/css">
+        <link rel="stylesheet" href="./pages.css" type="text/css">
+        <link rel="stylesheet" href="./pageAnimation.css" type="text/css">
+        <link rel="stylesheet" href="./backgroud_elements.css" type="text/css">
+        <script src="bg_elements.js"></script>
+        
+        <title>HAO</title>
+    </head>
+    <body>
+        <div class="sideView">
+            <div class="side">
+                <!-- 头像模块 -->
+                <div class="avatar">
+                    <img src="./images2/侧边头像.jpg" alt="头像">
+                </div>
+                <!-- 菜单模块 -->
+                <ul class="Menu">
+                    <div class="li-after"></div>
+                    <li data-section = "home">
+                        <a href="#home">
+                            <div class="icon">
+                                <svg class="icon-svg">
+                                    <use xlink:href="./font_test1/icon.svg#icon-home"></use>
+                                </svg>
+                            </div>
+                            <span class="content">HOME</span>
+                        </a>
+                    </li>
+                    <div class="li-after"></div>
+                    <li data-section = "profile">
+                        <a href="#profile">
+                            <div class="icon">
+                                <svg class="icon-svg">
+                                    <use xlink:href="./font_test1/icon.svg#icon-profile"></use>
+                                </svg>
+                               
+                            </div>
+                            <span class="content">PROFILE</span>
+                        </a>
+                    </li>
+                    <div class="li-after"></div>
+                    <li data-section = "overview">
+                        <a href="#overview">
+                            <div class="icon">
+                                <svg class="icon-svg">
+                                    <use xlink:href="./font_test1/icon.svg#icon-overview"></use>
+                                </svg>
+                            </div>
+                            <span class="content">OVERVIEW</span>
+                        </a>
+                    </li>
+                    <div class="li-after"></div>
+                    <li data-section = "academic">
+                        <a href="#academic">
+                            <div class="icon">
+                                <svg class="icon-svg">
+                                    <use xlink:href="./font_test1/icon.svg#icon-academic"></use>
+                                </svg>
+                            </div>
+                            <span class="content">ACADEMIC</span>
+                        </a>
+                    </li>
+                    <div class="li-after"></div>
+                    <li data-section = "share">
+                        <a href="#share">
+                            <div class="icon">
+                                <svg class="icon-svg">
+                                    <use xlink:href="./font_test1/icon.svg#icon-share2"></use>
+                                </svg>
+                            </div>
+                            <span class="content">SHARE</span>
+                        </a>
+                    </li>
+                    <div class="li-after"></div>
+                </ul>
+                <div class="music-control" id="music-control">
+                    <img src="./images2/音乐.png" alt="Play/Pause Button" id="music-button">
+                    <audio id="background-music" src="./music/Bikini Bottom Band - Spongebob Squarepants Closing Theme.mp3" loop autoplay muted></audio>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 页面内容 -->
+        <!-- home部分 -->
+        <script src="home.js"></script>
+        <div class="page-wrapper" id="home-wrapper">
+            <div class="page" id="home">
+                <div class="home-content">
+                    <div class="ava-name">
+                        <!-- 头像框 -->
+                        <div class="total-avatar">
+                            <div class="outer-avatar">
+                                <img src="./images2/头像.png" alt="My Avatar">
+                                <div class="eye left">
+                                    <div class="pupil"></div>
+                                </div>
+                                <div class="eye right">
+                                    <div class="pupil"></div>
+                                </div>
+                            </div>
+                            <div class="inner-avatar">
+                            </div>
+                        </div>
+                        
+                        <h2 class="name">Rory Chou</h2>
+                        <h3 class="ZH-name">Wenhao Zhou</h3>
+                    </div>
+                    <p><strong>~~Are you ready~~</strong></p>
+                </div>
+                <span class="Next"><a href="#profile"><img src="./images2/next.png" alt="next" class="xiayiye"></a></span>
+            </div>
+
+        </div>
+        
+
+        <!-- profile部分 -->
+         <div class="page-wrapper" id="profile-wrapper">
+            <div class="page" id="profile">
+                
+                <div class="bofore-introduction"></div>
+                <div class="introduction">
+                        <span class="biaoqian">DLUT</span>
+                        <span class="biaoqian">00后</span>
+                        <span class="biaoqian">CODE</span>
+                    <p class="content">name：Wenhao Zhou</p>
+                    <!-- <p class="content">you can call me Rory Chou</p> -->
+                    <p class="content">e-mail:1036414767@qq.com</p>
+                    <!-- <p class="content">来自安徽宣城</p> -->
+                    <!-- <p class="content">毕业于广德中学</p> -->
+                    <!-- <p class="content">现就读于大连理工大学</p>-->
+                    <p class="content">软件工程专业</p>
+                    <p class="content"></p>
+                    <p class="content"></p>
+                    <p class="content"></p>
+                    <p class="content"></p>
+                </div>
+                <!-- 添加圆角矩形元素 -->
+                <div class="contact-icons">
+                    <a href="https://github.com/WHaoChou" target="_blank" class="icon github" title="GitHub">
+                        <img src="./icons/github.png" alt="GitHub">
+                    </a>
+                    <a href="mailto:1036414767@qq.com" class="icon qq" title="QQ Email">
+                        <img src="./icons/QQ邮箱.png" alt="QQ">
+                    </a>
+                    <a href="mailto:yourname@gmail.com" class="icon google" title="Google Email">
+                        <img src="./icons/google邮箱.png" alt="Google">
+                    </a>
+                    <a href="https://blog.csdn.net/weixin_62074880?spm=1000.2115.3001.5343" target="_blank" class="icon CSDN" title="CSDN">
+                        <img src="./icons/csdn.png" alt="csdn">
+                    </a>
+                </div>
+                <span class="Next"><a href="#overview"><img src="./images2/next.png" alt="next" class="xiayiye"></a></span>
+            </div>
+            <img class="bg-element" src="./images2/水木(2).png" alt="bg-element" data-path="path2">
+         </div>
+        
+
+
+        <!-- overview部分 -->
+         <div class="page-wrapper" id="overview-wrapper">
+            <div class="page" id="overview" >
+               
+                <div class="before-gallery"></div>
+                <div class="project-gallery">
+                    <!-- 项目组1 -->
+                    <div class="project-group">
+                        <div class="project-description">
+                            <div class="topic">
+                                <h3>Collection of small games</h3>
+                                <a href="https://github.com/your-repo-1" target="_blank">
+                                    <img src="./images2/分享前往链接.png" id="goto_link">
+                                </a>
+                            </div>
+                            <div class="before-project-group"></div>
+                        </div>
+                        <!-- 内容区域：文字描述和图片展示 -->
+                        <div class="project-content">
+                            
+                            <!-- 图片展示区域 -->
+                            <div class="project-slideshow">
+                                <div class="image-button"><button class="prev-btn">&lt;</button></div>
+                                <div class="slideshow-container">
+                                    <img src="./pictures_test1/chess_1.jpg" alt="Project 1 Image 1" class="slide">
+                                    <img src="./pictures_test1/square_1.jpg" alt="Project 1 Image 2" class="slide">
+                                    <img src="./pictures_test1/square_3.jpg" alt="Project 1 Image 3" class="slide">
+                                    <img src="./pictures_test1/snake_1.jpg" alt="Project 1 Image 4" class="slide">
+                                    <img src="./pictures_test1/snake_3.jpg" alt="Project 1 Image 5" class="slide">
+                                </div>
+                                <div class="image-button"><button class="next-btn">&gt;</button></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- 项目组2 -->
+                    <div class="project-group">
+                        <div class="project-description">
+                            <div class="topic">
+                                <h3>QT-based hotel management system</h3>
+                                <a href="https://github.com/your-repo-1" target="_blank">
+                                    <img src="./images2/分享前往链接.png" id="goto_link">
+                                </a>
+                            </div>
+                            <div class="before-project-group"></div>
+                        </div>
+                        
+                        <!-- 内容区域：文字描述和图片展示 -->
+                        <div class="project-content">
+                            
+                            <!-- 图片展示区域 -->
+                            <div class="project-slideshow">
+                                <div class="image-button"><button class="prev-btn">&lt;</button></div>
+                                <div class="slideshow-container">
+                                    <img src="./pictures_test1/hotel_1.jpg" alt="Project 2 Image 1" class="slide">
+                                    <img src="./pictures_test1/hotel_2.jpg" alt="Project 2 Image 2" class="slide">
+                                    <img src="./pictures_test1/hotel_3.jpg" alt="Project 2 Image 3" class="slide">
+                                    <img src="./pictures_test1/hotel_4.jpg" alt="Project 2 Image 4" class="slide">
+                                    <img src="./pictures_test1/hotel_5.jpg" alt="Project 2 Image 5" class="slide">
+                                    <img src="./pictures_test1/hotel_6.jpg" alt="Project 2 Image 6" class="slide">
+
+                                </div>
+                                <div class="image-button"><button class="next-btn">&gt;</button></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- 项目组3 -->
+                    <div class="project-group">
+                        <div class="project-description">
+                            <div class="topic">
+                                <h3> A-share company annual report large model agent</h3>
+                                <a href="https://github.com/your-repo-1" target="_blank">
+                                    <img src="./images2/分享前往链接.png" id="goto_link">
+                                </a>
+                            </div>
+                            <div class="before-project-group"></div>
+                        </div>
+                        <!-- 内容区域：文字描述和图片展示 -->
+                        <div class="project-content">
+                        
+                            <!-- 图片展示区域 -->
+                            <div class="project-slideshow">
+                                <div class="image-button"><button class="prev-btn">&lt;</button></div>
+                                <div class="slideshow-container">
+                                    <img src="./pictures_test1/agent_1.png" alt="Project 3 Image 1" class="slide">
+                                    <img src="./pictures_test1/agent_2.png" alt="Project 3 Image 2" class="slide">
+                                    <img src="./pictures_test1/agent_3.png" alt="Project 3 Image 3" class="slide">
+                                    <img src="./pictures_test1/agent_4.png" alt="Project 3 Image 4" class="slide">
+                                    <img src="./pictures_test1/agent_5.png" alt="Project 3 Image 5" class="slide">
+                                    <img src="./pictures_test1/agent_6.png" alt="Project 3 Image 6" class="slide">
+
+                                </div>
+                                <div class="image-button"><button class="next-btn">&gt;</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 项目组4 -->
+                    <div class="project-group">
+                        <div class="project-description">
+                            <div class="topic">
+                                <h3>letter recognition based on EEG signals</h3>
+                                <a href="https://github.com/your-repo-1" target="_blank">
+                                    <img src="./images2/分享前往链接.png" id="goto_link">
+                                </a>
+                            </div>
+                            <div class="before-project-group"></div>                       
+                        </div>
+                        <!-- 内容区域：文字描述和图片展示 -->
+                        <div class="project-content">
+                            
+                            <!-- 图片展示区域 -->
+                            <div class="project-slideshow">
+                                <div class="image-button"><button class="prev-btn">&lt;</button></div>
+                                <div class="slideshow-container">
+                                    <img src="./pictures_test1/EEG_1.png" alt="Project 4 Image 1" class="slide">
+                                    <img src="./pictures_test1/EEG_2.jpg" alt="Project 4 Image 2" class="slide">
+                                    <img src="./pictures_test1/EEG_3.png" alt="Project 4 Image 3" class="slide">
+                                </div>
+                                <div class="image-button"><button class="next-btn">&gt;</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 项目组5 -->
+                    <div class="project-group">
+                        <div class="project-description">
+                            <div class="topic">
+                                <h3>momentum and situation prediction in tennis matches</h3>
+                                <a href="https://github.com/your-repo-1" target="_blank">
+                                    <img src="./images2/分享前往链接.png" id="goto_link">
+                                </a>
+                            </div>
+                            <div class="before-project-group"></div>
+                        </div>
+                        <!-- 内容区域：文字描述和图片展示 -->
+                        <div class="project-content">
+                            <!-- 图片展示区域 -->
+                            <div class="project-slideshow">
+                                <div class="image-button"><button class="prev-btn">&lt;</button></div>
+                                <div class="slideshow-container">
+                                    <img src="./pictures_test1/momentum_1.png" alt="Project 5 Image 1" class="slide">
+                                    <img src="./pictures_test1/momentum_2.png" alt="Project 5 Image 2" class="slide">
+                                    <img src="./pictures_test1/momentum_3.png" alt="Project 5 Image 3" class="slide">
+                                    <img src="./pictures_test1/momentum_4.png" alt="Project 5 Image 4" class="slide">
+                                    <img src="./pictures_test1/momentum_5.png" alt="Project 5 Image 5" class="slide">
+                                </div>
+                                <div class="image-button"><button class="next-btn">&gt;</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 项目组6 -->
+                    <div class="project-group">
+                        <div class="project-description">
+                            <div class="topic">
+                                <h3>smart port of Huawei Software Elite Challenge</h3>
+                                <a href="https://github.com/your-repo-1" target="_blank">
+                                    <img src="./images2/分享前往链接.png" id="goto_link">
+                                </a>
+                            </div>
+                            <div class="before-project-group"></div>
+                        </div>
+                        <!-- 内容区域：文字描述和图片展示 -->
+                        <div class="project-content">
+                            <!-- 图片展示区域 -->
+                            <div class="project-slideshow">
+                                <div class="image-button"><button class="prev-btn">&lt;</button></div>
+                                <div class="slideshow-container">
+                                    <img src="./pictures_test1/port.png" alt="Project 6 Image 1" class="slide">
+                                    <img src="./pictures_test1/port_2.png" alt="Project 6 Image 2" class="slide">
+                                    <img src="./pictures_test1/port_3.png" alt="Project 6 Image 3" class="slide">
+                                    <img src="./pictures_test1/port_4.png" alt="Project 6 Image 4" class="slide">
+                                </div>
+                                <div class="image-button"><button class="next-btn">&gt;</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 更多项目组... -->
+                </div>
+                
+                <span class="Next"><a href="#academic"><img src="./images2/next.png" alt="next" class="xiayiye"></a></span>
+            </div>
+            <img class="bg-element" src="./images2/水木(2).png" alt="bg-element" data-path="path3">
+
+         </div>
+        
+        <div class="page-wrapper" id="academic-wrapper">
+            <div class="page" id="academic">
+                <span class="Next"><a href="#academic"><img src="./images2/next.png" alt="next" class="xiayiye"></a></span>
+            </div>
+            <img class="bg-element" src="./images2/水木(2).png" alt="bg-element" data-path="path4">
+        </div>
+        
+
+        <script src="share_box.js"></script>
+
+        <div class="page-wrapper" id="share-wrapper">
+            <div class="page" id="share">
+                <div class="share-container">
+                    <div class="share-box" id="box-1">
+                        
+                    </div>
+                    <div class="share-box" id="box-2">
+                    
+                    </div>
+                    <div class="share-box" id="box-3">
+                        
+                    </div>
+                    <div class="share-box" id="box-4">
+                        
+                    </div>
+                </div>
+            </div>    
+            <img class="bg-element" src="./images2/水木(2).png" alt="bg-element" data-path="path5">
+            <img class="bg-img" src="./images2/人物.png" alt="bg-img" id="douwang">
+        </div>
+        
+        <script src="music.js"></script>
+        <script src="pictures_show.js"></script>
+        <script src="pages.js"></script>
+
+    </body>    
+
+
+
+
+</html>
